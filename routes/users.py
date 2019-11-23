@@ -52,7 +52,7 @@ def user_update():
 def user_delete():
     user = userRepository.getUser(get_jwt_identity())
 
-    if not user:        
+    if not user:
         return jsonify({"error": "User not exist"})
    
     userRepository.remove(user)

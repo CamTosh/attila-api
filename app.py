@@ -11,6 +11,7 @@ from flask_jwt_extended import (
     JWTManager, jwt_required, create_access_token,
     get_jwt_identity
 )
+import stripe
 
 # Configure the app
 app = Flask(__name__)
@@ -29,6 +30,10 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 global mongo
 mongo = PyMongo(app)
+
+global stripeAPI
+stripe.api_key = os.getenv('STRIPE_API_KEY')
+stripeAPI = stripe
 
 # Register routes
 from routes import *

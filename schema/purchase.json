@@ -1,0 +1,13 @@
+{
+  "create": {
+    "type": "object",
+    "properties": {
+      "userId": {"type": "string"},
+      "productId": {"type": "string"},
+      "customer": {"type": "string"},
+      "amount": {"type": "float"},
+      "currency": {"type": "string"},
+    },
+    "required": ["userId", "productId", "customer", "amount", "currency"]
+  }
+}
